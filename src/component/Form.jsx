@@ -20,16 +20,18 @@ function Form() {
           <To />
           <DepartureReturn />
         </div>
-        <PassengerTravel />
-        <VoucherEvnt />
-        <button
-          type="submit"
-          className="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-        >
-          Book now
-        </button>
+        <div className="row">
+          <PassengerTravel />
+          <VoucherEvnt />
+          <button
+            type="submit"
+            className="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Book now
+          </button>
+        </div>
         {/* TODO:Modal */}
         <Modal />
       </form>

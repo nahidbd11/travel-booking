@@ -4,6 +4,7 @@ function ContextWrapper({ children }) {
   //state will be here
   const [day, setDay] = useState("");
   const [journeyType, setJourneyType] = useState();
+  const [isPModal, setIsPModal] = useState(false);
 
   //all methods
   const handleSubmit = (e) => {
@@ -18,6 +19,8 @@ function ContextWrapper({ children }) {
         day,
         journeyType,
         setJourneyType,
+        isPModal,
+        setIsPModal,
       }}
     >
       {children}

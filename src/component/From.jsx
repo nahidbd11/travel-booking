@@ -15,7 +15,7 @@ const From = () => {
           id="inputGroupSelect04"
           aria-label="Example select with button addon"
         >
-          <option defaultValue="Bd">select departure </option>
+          <option defaultValue="">select departure </option>
           <option value="1">One</option>
           <option value="2">Two</option>
           <option value="3">Three</option>

@@ -29,6 +29,49 @@
   left: 30%;
 }
 
+.psbtn {
+  border-bottom: 1px solid grey;
+}
+
+.passenger_container {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.psmodal {
+  background-color: white;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 2.8rem;
+  padding: 2rem;
+  min-width: min(80vw, 500px);
+  z-index: 9999;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.pscount .right {
+  background-color: #f6f8fc;
+  width: 30%;
+  height: 30%;
+}
+
+.form-control-sm.no-spinner {
+  min-width: 50% !important;
+  text-align: center;
+  background-color: transparent;
+}
+
 @media screen and (min-width: 0px) {
   .DayPickerInput-OverlayWrapper {
     position: absolute;
