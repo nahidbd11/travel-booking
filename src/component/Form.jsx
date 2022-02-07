@@ -25,7 +25,7 @@ function Form() {
           <VoucherEvnt />
           <button
             type="submit"
-            className="btn btn-primary"
+            className="btn btn-primary col-md-4 col-12"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
           >
