@@ -1,0 +1,47 @@
+@import "./form";
+.app {
+  background-color: #a2bce0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+// .DayPickerInput-OverlayWrapper {
+//   padding: 1rem;
+// }
+.DayPicker-Months {
+  flex-wrap: nowrap;
+  padding: 5px;
+  margin-left: 5px;
+  //   margin-top: 2rem;
+}
+
+.DayPickerInput-OverlayWrapper {
+  position: absolute;
+  left: 30%;
+}
+
+@media screen and (min-width: 0px) {
+  .DayPickerInput-OverlayWrapper {
+    position: absolute;
+    left: 5%;
+  }
+}
+@media screen and (max-width: 570px) {
+  .DayPicker-Months {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 768px) {
+  .DayPickerInput-OverlayWrapper {
+    position: absolute;
+    left: 28%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .DayPickerInput-OverlayWrapper {
+    position: absolute;
+    left: 45%;
+  }
+}

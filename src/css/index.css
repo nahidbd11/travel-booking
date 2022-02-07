@@ -1,0 +1,54 @@
+.formWrapper {
+  background-color: #fff;
+  padding: 2rem;
+}
+.formWrapper h1 {
+  color: #eb143a;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: min(10vw, 60px);
+  font-weight: lighter;
+}
+
+.app {
+  background-color: #a2bce0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.DayPicker-Months {
+  flex-wrap: nowrap;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.DayPickerInput-OverlayWrapper {
+  position: absolute;
+  left: 30%;
+}
+
+@media screen and (min-width: 0px) {
+  .DayPickerInput-OverlayWrapper {
+    position: absolute;
+    left: 5%;
+  }
+}
+@media screen and (max-width: 570px) {
+  .DayPicker-Months {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 768px) {
+  .DayPickerInput-OverlayWrapper {
+    position: absolute;
+    left: 28%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .DayPickerInput-OverlayWrapper {
+    position: absolute;
+    left: 45%;
+  }
+}
