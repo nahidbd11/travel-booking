@@ -39,7 +39,7 @@
   position: absolute;
   top: 2.8rem;
   padding: 2rem;
-  margin-left: -1rem !important;
+  margin-left: -1.2rem !important;
   min-width: min(80vw, 500px);
   z-index: 2;
 }
@@ -70,7 +70,7 @@ input[type="number"] {
 @media screen and (min-width: 0px) {
   .DayPickerInput-OverlayWrapper {
     position: absolute;
-    left: 0%;
+    left: 3%;
   }
 }
 @media screen and (max-width: 570px) {
