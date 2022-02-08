@@ -1,15 +1,14 @@
 import React, { useContext } from "react";
 import PassengerCount from "./PassengerCount";
-import data from "./data";
 import { AppContext } from "./Context";
 const PassengerModal = () => {
   const { passengerData, setPassengerData } = useContext(AppContext);
   return (
     <div className="psmodal">
       <div className="modalcontent">
+        {/* TODO:select class */}
         <div className="modalheader">
           <h5>Travel Class</h5>
-          {/* TODO:select class */}
           <div className="travelclass">
             <select
               className="form-select  p-3 mb-3"
@@ -42,6 +41,7 @@ const PassengerModal = () => {
             })}
           </div>
         </div>
+        {/* TODO:Done button hide psmodal */}
         <button
           className="btn btn-outline-danger"
           onClick={() =>

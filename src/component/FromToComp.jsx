@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { MdLocationOn } from "react-icons/md";
 import { AppContext } from "./Context";
-const From = () => {
+const FromtoComp = ({ type }) => {
   const { setPassengerData, passengerData } = useContext(AppContext);
   return (
     <div className="col-12 col-md-4">
-      <label htmlFor="departure" className="form-label">
-        From
+      <label className="form-label">
+        {type.charAt(0).toUpperCase() + type.slice(1)}
       </label>
       <div className="input-group">
         <span className="input-group-text">
@@ -14,13 +14,13 @@ const From = () => {
         </span>
         <select
           onChange={(e) =>
-            setPassengerData({ ...passengerData, from: e.target.value })
+            setPassengerData({ ...passengerData, [type]: e.target.value })
           }
           className="form-select"
-          id="inputGroupSelect04"
-          aria-label="Example select with button addon"
         >
-          <option defaultValue="">select departure </option>
+          <option defaultValue="">
+            select {type === "from" ? "departure" : "destination"}
+          </option>
           <option value="Dhaka">Dhaka</option>
           <option value="Chittagoang">Chittagoang</option>
           <option value="shylet">shylet</option>
@@ -30,4 +30,4 @@ const From = () => {
   );
 };
 
-export default From;
+export default FromtoComp;

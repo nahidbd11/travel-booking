@@ -3,7 +3,6 @@ import data from "./data";
 export const AppContext = createContext(undefined);
 function ContextWrapper({ children }) {
   //state will be here
-
   const [passengerData, setPassengerData] = useState({
     total: 1,
     passdata: data,

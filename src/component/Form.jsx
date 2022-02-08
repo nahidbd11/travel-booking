@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import { AppContext } from "./Context";
 import DepartureReturn from "./DepartureReturn";
-import From from "./From";
+import FromtoComp from "./FromToComp";
 import Modal from "./Modal";
 import PassengerTravel from "./PassengerTravel";
 import RadioButton from "./RadioButton";
-import To from "./To";
 import VoucherEvnt from "./VoucherEvnt";
 
 function Form() {
@@ -16,8 +15,8 @@ function Form() {
       <form action="" onSubmit={handleSubmit}>
         <RadioButton />
         <div className="row">
-          <From />
-          <To />
+          <FromtoComp type="from" />
+          <FromtoComp type="to" />
           <DepartureReturn />
         </div>
         <div className="row">
