@@ -11,7 +11,7 @@ const Calendar = ({ tagname, journeyType }) => {
   return (
     <div className="col-6">
       <DayPickerInput
-        onDayChange={handleDaychange}
+        onDayChange={(day) => handleDaychange(day, tagname)}
         component={React.forwardRef((props, ref) => (
           <div>
             <label
@@ -31,7 +31,11 @@ const Calendar = ({ tagname, journeyType }) => {
                   setShowWarning(true);
                 }}
                 placeholder="select date"
-                value={passengerData.day}
+                value={
+                  tagname === "departure"
+                    ? passengerData.departureday
+                    : passengerData.returnday
+                }
                 disabled={journeyType === "oneWay"}
               />
             </div>

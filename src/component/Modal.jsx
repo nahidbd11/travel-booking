@@ -35,11 +35,11 @@ const Modal = () => {
             </div>
             <div className="info">
               <span className="fw-normal text-primary">Departure Date:</span>
-              <span className="text-muted"> {passengerData.day}</span>
+              <span className="text-muted"> {passengerData.departureday}</span>
             </div>
             <div className="info">
               <span className="fw-normal text-primary">Return Date:</span>
-              <span className="text-muted"> {passengerData.day}</span>
+              <span className="text-muted"> {passengerData.returnday}</span>
             </div>
             <div className="info">
               <span className="fw-normal text-primary">Total passengers:</span>

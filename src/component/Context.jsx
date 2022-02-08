@@ -7,7 +7,8 @@ function ContextWrapper({ children }) {
     total: 1,
     passdata: data,
     travelClass: "economy",
-    day: "",
+    departureday: "",
+    returnday: "",
     journeyType: "",
     from: "",
     to: "",
@@ -19,8 +20,18 @@ function ContextWrapper({ children }) {
     e.preventDefault();
   };
   //handle departure and return date change
-  const handleDaychange = (day) =>
-    setPassengerData({ ...passengerData, day: day.toLocaleDateString() });
+  const handleDaychange = (day, tagname) => {
+    if (tagname === "departure")
+      setPassengerData({
+        ...passengerData,
+        departureday: day.toLocaleDateString(),
+      });
+    else
+      setPassengerData({
+        ...passengerData,
+        returnday: day.toLocaleDateString(),
+      });
+  };
 
   //handle passenger number inc or dec or change
   function changeNumb(id, type, val) {
