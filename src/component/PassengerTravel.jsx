@@ -3,17 +3,26 @@ import { BiChevronDown } from "react-icons/bi";
 import { AppContext } from "./Context";
 import PassengerModal from "./PassengerModal";
 const PassengerTravel = () => {
-  const { isPModal, setIsPModal } = useContext(AppContext);
+  const { passengerData, setPassengerData } = useContext(AppContext);
   return (
-    <div className="mt-3 passenger_container  col-12 col-md-4">
-      <button
-        className="btn psbtn d-flex align-items-center gap-5"
-        onClick={() => setIsPModal(!isPModal)}
-      >
-        <span>1passenger,economy</span>
-        <BiChevronDown />
-      </button>
-      {isPModal && <PassengerModal />}
+    <div className="passenger_container  col-12 col-md-4">
+      <label>Passenger/Travel Class</label>
+      <div className="input-group">
+        <button
+          className="btn psbtn d-flex align-items-center gap-2"
+          onClick={() =>
+            setPassengerData({
+              ...passengerData,
+              isPModal: !passengerData.isPModal,
+            })
+          }
+        >
+          <span>{passengerData.total} passenger,</span>
+          <span>{passengerData.travelClass}</span>
+          <BiChevronDown />
+        </button>
+        {passengerData.isPModal && <PassengerModal />}
+      </div>
     </div>
   );
 };

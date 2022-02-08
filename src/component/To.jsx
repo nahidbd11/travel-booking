@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MdLocationOn } from "react-icons/md";
+import { AppContext } from "./Context";
 
 const To = () => {
+  const { setPassengerData, passengerData } = useContext(AppContext);
   return (
     <div className="col-12 col-md-4">
       <label htmlFor="to" className="form-label">
@@ -12,14 +14,17 @@ const To = () => {
           <MdLocationOn />
         </span>
         <select
+          onChange={(e) =>
+            setPassengerData({ ...passengerData, to: e.target.value })
+          }
           className="form-select"
           id="to"
           aria-label="Example select with button addon"
         >
-          <option defaultValue="Bd">select destination </option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option value="">select destination </option>
+          <option value="Dhaka">Dhaka</option>
+          <option value="Chittagoang">Chittagoang</option>
+          <option value="shylet">shylet</option>
         </select>
       </div>
     </div>

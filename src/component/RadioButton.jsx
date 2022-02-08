@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AppContext } from "./Context";
 
 const RadioButton = () => {
-  const { setJourneyType } = useContext(AppContext);
+  const { passengerData, setPassengerData } = useContext(AppContext);
   return (
     <div style={{ display: "flex", gap: 55 }}>
       <div className="form-check">
@@ -12,7 +12,9 @@ const RadioButton = () => {
           name="journeyType"
           value="oneWay"
           id="flexRadioDefault1"
-          onChange={(e) => setJourneyType(e.target.value)}
+          onChange={(e) =>
+            setPassengerData({ ...passengerData, journeyType: e.target.value })
+          }
         />
         <label className="form-check-label" htmlFor="flexRadioDefault1">
           One way
@@ -25,7 +27,9 @@ const RadioButton = () => {
           name="journeyType"
           value="roundTrip"
           id="flexRadioDefault1"
-          onChange={(e) => setJourneyType(e.target.value)}
+          onChange={(e) =>
+            setPassengerData({ ...passengerData, journeyType: e.target.value })
+          }
         />
         <label className="form-check-label" htmlFor="flexRadioDefault1">
           Round trip

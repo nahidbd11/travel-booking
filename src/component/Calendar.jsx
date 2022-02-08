@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 import { AppContext } from "./Context";
 const Calendar = ({ tagname, journeyType }) => {
   const [showWarning, setShowWarning] = useState(false);
-  const { handleDaychange, day } = useContext(AppContext);
+  const { handleDaychange, passengerData } = useContext(AppContext);
 
   return (
     <div className="col-6">
@@ -31,7 +31,7 @@ const Calendar = ({ tagname, journeyType }) => {
                   setShowWarning(true);
                 }}
                 placeholder="select date"
-                value={day}
+                value={passengerData.day}
                 disabled={journeyType === "oneWay"}
               />
             </div>

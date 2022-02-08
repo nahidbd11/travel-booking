@@ -25,14 +25,14 @@ function Form() {
           <VoucherEvnt />
           <button
             type="submit"
-            className="btn btn-primary col-md-4 col-12"
+            className="btn btn-danger btn-sm col-md-4 col-12 mt-4"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
           >
             Book now
           </button>
         </div>
-        {/* TODO:Modal */}
+        {/* TODO:Modal will display all form input */}
         <Modal />
       </form>
     </div>

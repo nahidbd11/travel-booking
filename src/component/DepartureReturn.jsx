@@ -3,12 +3,12 @@ import Calendar from "./Calendar";
 import { AppContext } from "./Context";
 
 const DepartureReturn = () => {
-  const { journeyType } = useContext(AppContext);
+  const { passengerData } = useContext(AppContext);
   return (
     <div className="col-12 col-md-4">
       <div className="row">
         <Calendar tagname="departure" />
-        <Calendar tagname="return" journeyType={journeyType} />
+        <Calendar tagname="return" journeyType={passengerData.journeyType} />
       </div>
     </div>
   );

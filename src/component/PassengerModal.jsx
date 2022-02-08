@@ -1,15 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import PassengerCount from "./PassengerCount";
 import data from "./data";
+import { AppContext } from "./Context";
 const PassengerModal = () => {
+  const { passengerData, setPassengerData } = useContext(AppContext);
   return (
     <div className="psmodal">
       <div className="modalcontent">
-        <div class="modalheader">
+        <div className="modalheader">
           <h5>Travel Class</h5>
           {/* TODO:select class */}
           <div className="travelclass">
-            <select class="form-select  p-3 mb-3">
+            <select
+              className="form-select  p-3 mb-3"
+              onChange={(e) =>
+                setPassengerData({
+                  ...passengerData,
+                  travelClass: e.target.value,
+                })
+              }
+            >
               <option defaultValue="economy">economy</option>
               <option value="premium">premium</option>
               <option value="upperclass">upperclass</option>
@@ -21,12 +31,25 @@ const PassengerModal = () => {
         <div className="modalbody">
           <h5>Passengers</h5>
           <div className="pscount">
-            {data.map((passenger) => {
-              const { passengerType, ageLimit } = passenger;
-              return <PassengerCount {...{ passengerType, ageLimit }} />;
+            {passengerData["passdata"].map((passenger) => {
+              const { passengerType, ageLimit, num, id } = passenger;
+              return (
+                <PassengerCount
+                  {...{ passengerType, ageLimit, num, id }}
+                  key={id}
+                />
+              );
             })}
           </div>
         </div>
+        <button
+          className="btn btn-outline-danger"
+          onClick={() =>
+            setPassengerData({ ...passengerData, isPModal: false })
+          }
+        >
+          Done
+        </button>
       </div>
     </div>
   );

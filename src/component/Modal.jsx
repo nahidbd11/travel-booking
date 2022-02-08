@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "./Context";
 
 const Modal = () => {
+  const { passengerData } = useContext(AppContext);
   return (
     <div
       className="modal fade"
@@ -23,24 +25,39 @@ const Modal = () => {
             ></button>
           </div>
           <div className="modal-body">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, perspiciatis quasi, possimus eius voluptatum incidunt
-            labore quo quisquam temporibus vitae distinctio voluptate
-            reprehenderit excepturi consequuntur placeat saepe sed dolorum
-            officiis?
+            <div className="info">
+              <span className="fw-normal text-primary">From:</span>
+              <span className="text-muted"> {passengerData.from}</span>
+            </div>
+            <div className="info">
+              <span className="fw-normal text-primary">to:</span>
+              <span className="text-muted"> {passengerData.to}</span>
+            </div>
+            <div className="info">
+              <span className="fw-normal text-primary">Departure Date:</span>
+              <span className="text-muted"> {passengerData.day}</span>
+            </div>
+            <div className="info">
+              <span className="fw-normal text-primary">Return Date:</span>
+              <span className="text-muted"> {passengerData.day}</span>
+            </div>
+            <div className="info">
+              <span className="fw-normal text-primary">Total passengers:</span>
+              <span className="text-muted"> {passengerData.total}</span>
+            </div>
+            <div className="info">
+              <span className="fw-normal text-primary">journey type:</span>
+              <span className="text-muted"> {passengerData.journeyType}</span>
+            </div>
           </div>
-          {/* <div className="modal-footer">
-            <button
-              type="button"
-              className="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" className="btn btn-primary">
-              Save changes
-            </button>
-          </div> */}
+
+          <button
+            className="btn btn-danger"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Done
+          </button>
         </div>
       </div>
     </div>
